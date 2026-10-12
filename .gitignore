@@ -1,0 +1,15 @@
+node_modules/
+.npm-cache/
+.local/
+frontend/dist/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.vercel/
+.sites-runtime/
+test-results/
+playwright-report/
+__pycache__/
+.venv/
+*.zip

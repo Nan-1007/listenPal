@@ -1,0 +1,16 @@
+{
+  "name": "listenpal-ai-agent-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["frontend"],
+  "scripts": {
+    "dev": "vite frontend --host 127.0.0.1",
+    "build": "tsc -b frontend && vite build frontend",
+    "preview": "vite preview frontend --host 127.0.0.1",
+    "test": "vitest run --root frontend",
+    "test:e2e": "playwright test",
+    "check": "vitest run --root frontend && tsc -b frontend && vite build frontend"
+  },
+  "devDependencies": { "@playwright/test": "^1.58.0" }
+}
