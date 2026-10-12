@@ -2,7 +2,7 @@
 
 一个可部署到 **GitHub + Vercel** 的 AI 有声剧生产平台 Demo，基于 `docs/product_design.md` 实现。通过六个 Agent 的工作流、质量评测与 Prompt 优化，演示从内容 Brief 到音频生产规划、再到数据反馈的闭环。
 
-默认使用确定性的 Mock 数据，**无需 API Key、数据库或独立后端**。界面使用英文，适合产品面试与作品集演示。
+默认使用确定性的 Mock 数据，**无需 API Key、数据库或独立后端**。操作界面以中文呈现，剧本和生产指令保留英文，以对应欧美听众的内容定位。适合产品面试与作品集演示。
 
 ![Dashboard](screenshots/dashboard.png)
 
@@ -10,11 +10,11 @@
 
 | 页面 | 路径 | 可操作功能 |
 | --- | --- | --- |
-| Dashboard | `/` | 剧集数量、平均质量、15 分钟留存、转化；7/30 天切换；项目搜索和状态筛选；创建项目；CSV 导出 |
-| Agent Workflow | `/workflow` | 六节点流程图；Input / Output / Evaluation Metric；Prompt 查看；运行、取消、重试；运行记录；JSON 导出 |
-| Evaluation Center | `/evaluation` | 剧情、人物、Hook、AI Pattern；Bad Case → 根因 → 可编辑 Prompt → 模拟重新生成与评测；前后证据；状态筛选；报告导出 |
-| Story Generation | `/stories` | 用户画像、题材、剧集长度；Story Brief、角色设定、Story Bible 和 Episode Outline |
-| Analytics | `/analytics` | CTR、15 分钟留存、付费点留存、付费转化；剧集长度、演播形式、付费卡点三种示例 A/B 对比 |
+| 项目总览 | `/` | 剧集数量、平均质量、15 分钟留存、转化；7/30 天切换；中英文项目搜索和状态筛选；创建项目；CSV 导出 |
+| Agent 工作流 | `/workflow` | 六步顺序导航；任务、输入、产出、验收标准；中文可读成果；提示词；运行、取消、重试；折叠运行记录与 JSON；结果导出 |
+| 质量评测 | `/evaluation` | 剧情、人物、章节吸引力、AI 表达风险；问题证据 → 根因 → 优化方式 → 重新评测；前后对比；状态筛选；报告导出 |
+| 故事创作 | `/stories` | 位于“更多工具”；用户画像、题材、长度；故事需求、人物设定、Story Bible 和章节大纲 |
+| 数据与实验 | `/analytics` | 位于“更多工具”；点击、留存、转化；剧集长度、演播形式、付费卡点的假设、对比和下一步验证 |
 
 项目、Prompt 优化和最近 20 次工作流记录保存到浏览器 `localStorage`。刷新后恢复，清除站点数据可重置 Demo。跨设备或不同浏览器的数据互不共享。
 
@@ -83,12 +83,12 @@ git push -u origin main
 
 ## 三分钟演示路线
 
-1. **Dashboard**：介绍生成规模、质量、留存、转化；切换时间范围，搜索一个故事。
-2. **New project**：填写标题、用户画像、题材、长度和冲突 Brief。
-3. **Run workflow**：观看六个 Agent 顺序执行；点击节点查看输入、输出和评测标准。
-4. **Evaluation Center**：选择 `The Last Promise`，打开 `Character drift`，修改并应用 Prompt，点击 `Re-evaluate`，查看 `7.2 → 9.0` 和更新后的文本证据。
-5. **Agent Workflow → Story Planning → Prompt**：展示优化后的 v2 指令，说明质量反馈如何回到生产阶段。
-6. **Analytics**：介绍剧集长度、演播形式、付费卡点的实验思路，以及数据如何反馈到下一轮内容 Brief。
+1. **项目总览**：介绍生成规模、质量、留存、转化；切换时间范围，搜索一个故事。
+2. **新建项目**：填写故事需求、用户画像、题材与长度。
+3. **运行工作流**：观看六个 Agent 顺序执行；点击步骤查看任务、输入、可读输出和验收标准。
+4. **质量评测**：选择“最后的承诺”，打开“人物设定不一致”，应用优化方案，点击“重新评测”，查看 `7.2 → 9.0` 和改写证据。可展开“编辑生成指令（英文）”自定义提示词。
+5. **Agent 工作流 → 故事规划 → 提示词**：展示优化后的 v2 指令，说明质量反馈如何回到生产阶段。
+6. **更多工具 → 数据与实验**：介绍剧集长度、演播形式、付费卡点的假设与验证方法，再反馈到下一轮内容策略。
 
 ## 技术与边界
 
@@ -135,3 +135,4 @@ ListenPal-AI-Agent-Studio/
 - [Agent Workflow](docs/agent_workflow.md)
 - [评测与优化闭环](docs/evaluation_system.md)
 - [需求实现映射](docs/implementation.md)
+- [中文界面与产品设计取舍](docs/ui_design.md)
