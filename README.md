@@ -79,7 +79,6 @@ git push -u origin main
 
 根目录 `vercel.json` 已写入上述构建配置和 SPA 路由回退；部署后直接访问或刷新 `/workflow`、`/evaluation` 等路由会加载应用。后续推送可由 Vercel 的 Git 集成触发部署。参考：[Vercel 官方 Vite 部署文档](https://vercel.com/docs/frameworks/frontend/vite)。
 
-本次交付为可部署源码，尚未上传你的 GitHub 仓库或发布到 Vercel。
 
 ## 三分钟演示路线
 
