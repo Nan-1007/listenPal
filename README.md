@@ -2,7 +2,7 @@
 
 一个可部署到 **GitHub + Vercel** 的 AI 有声剧生产平台 Demo，基于 `docs/product_design.md` 实现。通过六个 Agent 的工作流、质量评测与 Prompt 优化，演示从内容 Brief 到音频生产规划、再到数据反馈的闭环。
 
-默认使用确定性的 Mock 数据，**无需 API Key、数据库或独立后端**。界面使用英文，适合产品面试与作品集演示。
+默认使用确定性的 Mock 数据，**无需 API Key、数据库或独立后端**。
 
 ![Dashboard](screenshots/dashboard.png)
 
